@@ -28,7 +28,6 @@ Here are a few good examples:
 
 ![](runs/1508599441.1347415/m_000000.png)
 ![](runs/1508599441.1347415/umm_000029.png)
-
 And a worse one:
 
 ![](runs/1508599441.1347415/umm_000052.png)
