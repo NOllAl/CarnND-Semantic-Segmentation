@@ -27,7 +27,7 @@ The network is trained for 50 epochs and the loss decreases quickly. Actually, w
 Here are a few good examples:
 
 ![](runs/1508599441.1347415/m_000000.png)
-
+a
 ![](runs/1508599441.1347415/umm_000029.png)
 
 And a worse one:
