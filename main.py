@@ -45,11 +45,11 @@ def layers(vgg_layer3_out, vgg_layer4_out, vgg_layer7_out, num_classes):
     """
     # VGG Layer 7 goes to 1x1 convolution
     layer7a_out = tf.layers.conv2d(vgg_layer7_out, num_classes, 1, padding='same', 
-                                   kernel_initializer= tf.random_normal_initializer(stddev=0.02),
+                                   kernel_initializer= tf.random_normal_initializer(stddev=0.01),
                                    kernel_regularizer= tf.contrib.layers.l2_regularizer(0.001))
     # Transposed convolution
     layer4a_in1 = tf.layers.conv2d_transpose(layer7a_out, num_classes, 4, strides= (2, 2), padding='same', 
-                                             kernel_initializer= tf.random_normal_initializer(stddev=0.02), 
+                                             kernel_initializer= tf.random_normal_initializer(stddev=0.01), 
                                              kernel_regularizer= tf.contrib.layers.l2_regularizer(0.001))
 
     # VGG Layer 4 goes to 1x1 convolution
@@ -62,11 +62,11 @@ def layers(vgg_layer3_out, vgg_layer4_out, vgg_layer7_out, num_classes):
     
     # Transposed convolution
     layer3a_in1 = tf.layers.conv2d_transpose(layer4a_out, num_classes, 4, strides= (2, 2), padding='same', 
-                                             kernel_initializer= tf.random_normal_initializer(stddev=0.02), 
+                                             kernel_initializer= tf.random_normal_initializer(stddev=0.01), 
                                              kernel_regularizer= tf.contrib.layers.l2_regularizer(0.001))
     # VGG layer 31x1 convolution
     layer3a_in2 = tf.layers.conv2d(vgg_layer3_out, num_classes, 1, padding= 'same', 
-                                   kernel_initializer= tf.random_normal_initializer(stddev=0.02), 
+                                   kernel_initializer= tf.random_normal_initializer(stddev=0.01), 
                                    kernel_regularizer= tf.contrib.layers.l2_regularizer(0.001))
 
     # Next skip connection
@@ -148,7 +148,7 @@ def run():
         
 
         # Set params
-        epochs = 50
+        epochs = 20
         batch_size = 2
 
         # TF placeholders
